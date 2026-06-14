@@ -16,7 +16,7 @@
 
 ### 🖼️ Test Set Predictions
 
-![Test Predictions](test_predictions.png)
+<img src="test_predictions.png" alt="Test Predictions" width="100%"/>
 
 > Each row shows: **Aerial Image** · **Ground Truth** · **Prediction** · **Error Map** (🟢 TP · 🔴 FP · 🔵 FN)
 
@@ -91,6 +91,17 @@ Expected folder structure after download:
 
 ---
 
+## 📂 Repository Structure
+
+```
+building-footprint-segformer/
+├── Building_Footprint.ipynb   ← Fully documented training notebook
+├── test_predictions.png       ← Sample predictions on test set
+└── README.md
+```
+
+---
+
 ## ⚙️ Training Configuration
 
 | Parameter | Value |
@@ -111,8 +122,8 @@ Expected folder structure after download:
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/SaynaSarvar/building-footprint-extraction.git
-cd building-footprint-extraction
+git clone https://github.com/SaynaSarvar/building-footprint-segformer.git
+cd building-footprint-segformer
 ```
 
 ### 2. Install dependencies
@@ -120,26 +131,21 @@ cd building-footprint-extraction
 pip install torch torchvision transformers albumentations tqdm matplotlib pillow
 ```
 
-### 3. Download dataset
+### 3. Download the dataset
 Download the WHU aerial dataset (cropped tiles, 0.3m) from the [official page](https://gpcv.whu.edu.cn/data/building_dataset.html) and place it in the project root.
 
-### 4. Update the path in CONFIG
+### 4. Open the notebook
+```bash
+jupyter notebook Building_Footprint.ipynb
+```
+Or open directly in **Google Colab** — all paths and install commands are included in the notebook.
+
+### 5. Update the dataset path in CONFIG
 ```python
 CONFIG = {
     "main_folder": "path/to/3. The cropped image tiles and raster labels",
     ...
 }
-
----
-
-## 📂 Repository Structure
-
-```
-building-footprint-extraction/
-├── Building_Footprint.ipynb  ← Documented Jupyter notebook
-├── README.md
-├── test_predictions.png      ← Sample predictions on test set
-└── requirements.txt
 ```
 
 ---
@@ -155,18 +161,6 @@ building-footprint-extraction/
 | ElasticTransform / GridDistortion | 0.3 | Geometric robustness |
 | GaussNoise / GaussianBlur | 0.2 | Sensor noise robustness |
 | CoarseDropout | 0.3 | Occlusion robustness |
-
----
-
-## 🔬 Ablation Study
-
-Training with different loss configurations on the same model and dataset:
-
-| Loss Configuration | IoU | Dice |
-|-------------------|-----|------|
-| BCE only | — | — |
-| BCE + Dice | — | — |
-| BCE + Dice + Boundary (ours) | **0.8590** | **0.9189** |
 
 ---
 
