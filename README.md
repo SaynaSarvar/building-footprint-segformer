@@ -18,8 +18,6 @@
 
 <img src="test_preditions.png" alt="Test Predictions" width="100%"/>
 
-> Each row shows: **Aerial Image** · **Ground Truth** · **Prediction** · **Error Map** (🟢 TP · 🔴 FP · 🔵 FN)
-
 ---
 
 ## 🧠 Model Architecture
