@@ -129,17 +129,6 @@ CONFIG = {
     "main_folder": "path/to/3. The cropped image tiles and raster labels",
     ...
 }
-```
-
-### 5. Train
-```bash
-python train.py
-```
-
-### 6. Evaluate on test set
-```bash
-python test.py
-```
 
 ---
 
@@ -147,8 +136,6 @@ python test.py
 
 ```
 building-footprint-extraction/
-├── train.py                  ← Full training pipeline
-├── test.py                   ← Test set evaluation
 ├── Building_Footprint.ipynb  ← Documented Jupyter notebook
 ├── README.md
 ├── test_predictions.png      ← Sample predictions on test set
