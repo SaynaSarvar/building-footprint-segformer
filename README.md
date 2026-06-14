@@ -130,15 +130,30 @@ CONFIG = {
     ...
 }
 ```
+
+### 5. Train
+```bash
+python train.py
+```
+
+### 6. Evaluate on test set
+```bash
+python test.py
+```
+
 ---
 
 ## 📂 Repository Structure
 
 ```
 building-footprint-extraction/
+├── train.py                  ← Full training pipeline
+├── test.py                   ← Test set evaluation
 ├── Building_Footprint.ipynb  ← Documented Jupyter notebook
 ├── README.md
 ├── test_predictions.png      ← Sample predictions on test set
+└── requirements.txt
+```
 
 ---
 
